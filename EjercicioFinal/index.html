@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjercicioFinal</title>
+</head>
+
+<body>
+    <h1>INSCRIPCION DE ACTIVIDADES EXTRAESCOLARES</h1>
+
+    <form>
+        <fieldset>
+            <legend>FICHA PERSONAL</legend>
+            <label>Nombre:
+                <input id="name" type="text" placeholder="Escribre tu Nombre" required>
+            </label>
+            <br>
+            <label>Edad:
+                <input type="number" placeholder="Introduce tu edad" min="14" max="40" required>
+            </label>
+            <br>
+            <label>Fecha de nacimiento:
+                <input type="date" placeholder="Introduce tu fecha de nacimiento" required>
+            </label>
+            <br>
+            <label>Correo electronico:
+                <input type="email" placeholder="Introduce tu correo electronico">
+            </label>
+            <br>
+            <label>Número de contacto:
+                <input type="tel" placeholder="Introduce tu número de teléfono">
+
+            </label>
+        </fieldset>
+
+        <br>
+        <br>
+
+        <fieldset>
+            <legend>ACTIVIDAD A ELEGIR Y DISPONIBILIDAD</legend>
+            <input type="radio" id="muaythai" name="tipo_actividad" value="muaythai" checked>
+            <label for="muaythai">Muay Thai</label>
+            <br>
+            <input type="radio" id="boxeo" name="tipo_actividad" value="boxeo" checked>
+            <label for="boxeo">Boxeo</label>
+            <br>
+            <input type="radio" id="k1" name="tipo_actividad" value="k1" checked>
+            <label for="k1">K1</label>
+            <br>
+            <input type="radio" id="mma" name="tipo_actividad" value="mma" checked>
+            <label for="mma">MMA</label>
+            <br>
+            <input type="radio" id="bjj" name="tipo_actividad" value="bjj" checked>
+            <label for="bjj">BJJ</label>
+            <br>
+            <input type="radio" id="karate" name="tipo_actividad" value="karate" checked>
+            <label for="karate">Karate</label>
+            <br>
+            </label>
+            <br>
+            <br>
+            <input type="checkbox" id="lunes" name="disponibilidad" value="lunes">
+            <label for="lunes">Lunes</label>
+            <input type="checkbox" id="martes" name="disponibilidad" value="martes">
+            <label for="martes">Martes</label>
+            <input type="checkbox" id="miercoles" name="disponibilidad" value="miercoles">
+            <label for="miercoles">Miercoles</label>
+            <input type="checkbox" id="jueves" name="disponibilidad" value="jueves">
+            <label for="jueves">Jueves</label>
+            <input type="checkbox" id="viernes" name="disponibilidad" value="viernes">
+            <label for="viernes">Viernes</label>
+
+            <br>
+            <br>
+
+            <select id="turno" name="turno" required>
+                <option value="mañana">-- Selecciona una opción --</option>
+                <option value="mañana">Mañana</option>
+                <option value="mañana">Tarde</option>
+
+            </select>
+
+        </fieldset>
+
+        <br>
+        <br>
+
+        <fieldset>
+            <legend>Comentarios adicionales</legend>
+            <textarea name="comentarios" id="comentario_texto" rows="10" cols="40"></textarea>
+        </fieldset>
+
+        <br>
+        <br>
+
+        <fieldset>
+            <legend>Elige tu color favorito</legend>
+            <input type="color" name="color" required>
+        </fieldset>
+
+        <br>
+        <br>
+
+        <button type="submit">
+            Enviar formulario
+        </button>
+
+        <button type="reset">
+            Restablecer formulario
+        </button>
+
+
+    </form>
+
+
+</body>
+
+</html>
