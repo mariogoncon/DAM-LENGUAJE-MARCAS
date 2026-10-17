@@ -239,15 +239,15 @@
             <option>--- Escoge una opción ---</option>
 
             <optgroup label="clasicos">
-            <option>Holandés</option>
-            <option>Español</option>
+                <option>Holandés</option>
+                <option>Español</option>
             </optgroup>
 
             <optgroup label="modernos">
-            <option>Pelao</option>
-            <option>Avinagrao</option>
+                <option>Pelao</option>
+                <option>Avinagrao</option>
             </optgroup>
-            
+
         </select>
 
         <br>
@@ -275,7 +275,7 @@
 
         <label>Adjuntar archivos: </label>
         <input type="file" accept=".pdf, .jpg" multiple>
-        
+
         <br>
         <progress value="80" max="100"></progress>
         <br>
@@ -291,6 +291,559 @@
         </button>
 
     </form>
+
+
+
+
+    <!--
+    ============================================================
+    ============================================================
+
+           AMPLIACIÓN: OTROS ELEMENTOS DE FORMULARIOS
+
+    ============================================================
+    ============================================================
+
+    A continuación se explican otros controles HTML
+    que no aparecen en el formulario principal.
+
+    Los ejemplos están escritos como comentarios
+    para que el alumno pueda copiarlos y probarlos.
+
+    IMPORTANTE:
+
+    Para experimentar, copia el ejemplo que quieras
+    dentro del <form>, antes de su etiqueta de cierre.
+
+    No copies los delimitadores de comentario.
+
+    ============================================================
+    1. LISTA DESPLEGABLE: <select>
+    ============================================================
+
+    <label for="provincia">Provincia:</label>
+
+    <select id="provincia" name="provincia">
+
+        <option value="">Selecciona una provincia</option>
+
+        <option value="pontevedra">Pontevedra</option>
+
+        <option value="coruna">A Coruña</option>
+
+        <option value="lugo">Lugo</option>
+
+        <option value="ourense">Ourense</option>
+
+    </select>
+
+    EXPLICACIÓN:
+
+    <select>
+
+        Crea una lista desplegable.
+
+    <option>
+
+        Define cada opción disponible.
+
+    value
+
+        Es el dato que se enviará.
+
+    selected
+
+        Permite indicar qué opción aparece
+        seleccionada inicialmente.
+
+    EJEMPLO:
+
+        <option value="lugo" selected>Lugo</option>
+
+    PRUEBAS:
+
+    A. Añade otra provincia.
+
+    B. Cambia el orden de las opciones.
+
+    C. Añade required al select.
+
+    D. Añade disabled a una opción.
+
+    E. Prueba el atributo multiple en select.
+
+       Observa cómo cambia el comportamiento
+       y cómo se seleccionan varias opciones.
+
+
+    ============================================================
+    2. ÁREA DE TEXTO: <textarea>
+    ============================================================
+
+    <label for="comentarios">Comentarios:</label>
+
+    <textarea
+        id="comentarios"
+        name="comentarios"
+        rows="5"
+        cols="40"
+        placeholder="Escribe tus comentarios"
+    ></textarea>
+
+    EXPLICACIÓN:
+
+    <textarea>
+
+        Permite escribir texto de varias líneas.
+
+        A diferencia de input type="text",
+        admite saltos de línea.
+
+    rows="5"
+
+        Indica el número visible aproximado
+        de filas de texto.
+
+    cols="40"
+
+        Indica la anchura aproximada en caracteres.
+
+    maxlength="200"
+
+        Permite limitar la longitud del texto.
+
+    PRUEBAS:
+
+    A. Cambia rows="5" por rows="10".
+
+    B. Añade maxlength="20".
+
+    C. Escribe más de veinte caracteres.
+
+    D. Añade required.
+
+    E. Escribe un texto inicial entre las etiquetas:
+
+        <textarea>Texto inicial</textarea>
+
+       Observa la diferencia con placeholder.
+
+
+    ============================================================
+    3. CONTROL DESLIZANTE: type="range"
+    ============================================================
+
+    <label for="volumen">Volumen:</label>
+
+    <input
+        type="range"
+        id="volumen"
+        name="volumen"
+        min="0"
+        max="100"
+        step="5"
+        value="50"
+    >
+
+    EXPLICACIÓN:
+
+    Crea una barra deslizante.
+
+    min:
+
+        Valor mínimo.
+
+    max:
+
+        Valor máximo.
+
+    step:
+
+        Incremento entre valores permitidos.
+
+    value:
+
+        Valor inicial.
+
+    PRUEBAS:
+
+    A. Cambia max="100" por max="500".
+
+    B. Cambia step="5" por step="25".
+
+    C. Cambia value="50" por value="100".
+
+    D. Intenta averiguar cómo mostrar el valor
+       numérico mientras mueves el control.
+
+       PISTA:
+
+       Para actualizar el valor en tiempo real
+       puedes utilizar JavaScript.
+
+
+    ============================================================
+    4. SUBIDA DE ARCHIVOS: type="file"
+    ============================================================
+
+    <label for="archivo">Subir archivo:</label>
+
+    <input
+        type="file"
+        id="archivo"
+        name="archivo"
+    >
+
+    EXPLICACIÓN:
+
+    Permite seleccionar un archivo del dispositivo.
+
+    accept:
+
+        Sugiere los tipos de archivo que
+        se pueden seleccionar.
+
+    EJEMPLO:
+
+        accept="image/*"
+
+        Permite seleccionar imágenes compatibles.
+
+    OTRO EJEMPLO:
+
+        accept=".pdf"
+
+        Permite seleccionar archivos PDF.
+
+    multiple:
+
+        Permite seleccionar varios archivos.
+
+    IMPORTANTE:
+
+    accept no es una medida de seguridad suficiente.
+    El servidor debe comprobar los archivos recibidos.
+
+    Para enviar archivos de forma habitual se utiliza:
+
+        method="post"
+
+        enctype="multipart/form-data"
+
+    PRUEBAS:
+
+    A. Añade accept="image/*".
+
+    B. Prueba accept=".pdf".
+
+    C. Añade multiple.
+
+    D. Selecciona varios archivos.
+
+    E. Observa que seleccionar un archivo no significa
+       que se haya subido a un servidor.
+
+       Para recibirlo se necesita un destino
+       que procese el formulario.
+
+
+    ============================================================
+    5. CAMPO OCULTO: type="hidden"
+    ============================================================
+
+    <input
+        type="hidden"
+        name="curso"
+        value="HTML_basico"
+    >
+
+    EXPLICACIÓN:
+
+    Permite incluir un dato en el formulario
+    sin mostrar un control visible al usuario.
+
+    Por ejemplo:
+
+        curso=HTML_basico
+
+    IMPORTANTE:
+
+    Oculto no significa secreto ni seguro.
+
+    El usuario puede inspeccionar y modificar
+    su valor utilizando las herramientas
+    de desarrollo del navegador.
+
+    Nunca debemos confiar en un campo hidden
+    como mecanismo de seguridad.
+
+    PRUEBA:
+
+    Añade este campo al formulario.
+
+    Envía el formulario.
+
+    Comprueba si aparece curso=HTML_basico
+    entre los parámetros de la URL.
+
+
+    ============================================================
+    6. CAMPO DE BÚSQUEDA: type="search"
+    ============================================================
+
+    <label for="buscar">Buscar:</label>
+
+    <input
+        type="search"
+        id="buscar"
+        name="buscar"
+        placeholder="Escribe una búsqueda"
+    >
+
+    EXPLICACIÓN:
+
+    Se parece a un campo de texto.
+
+    Está pensado específicamente
+    para introducir búsquedas.
+
+    Algunos navegadores muestran
+    un botón para borrar el contenido.
+
+    PRUEBA:
+
+    Compara type="search" con type="text".
+
+    ¿Encuentras alguna diferencia visual?
+
+
+    ============================================================
+    7. DIRECCIÓN WEB: type="url"
+    ============================================================
+
+    <label for="web">Página web:</label>
+
+    <input
+        type="url"
+        id="web"
+        name="web"
+        placeholder="https://ejemplo.com"
+    >
+
+    EXPLICACIÓN:
+
+    Se utiliza para introducir direcciones web.
+
+    El navegador comprueba que el valor
+    tenga un formato de URL aceptable.
+
+    PRUEBAS:
+
+    A. Escribe una palabra cualquiera.
+
+    B. Intenta enviar el formulario.
+
+    C. Prueba con https://ejemplo.com.
+
+    D. Añade required.
+
+    IMPORTANTE:
+
+    Una URL con formato válido no garantiza
+    que la página exista.
+
+
+    ============================================================
+    8. LISTA DE SUGERENCIAS: <datalist>
+    ============================================================
+
+    <label for="lenguaje">Lenguaje favorito:</label>
+
+    <input
+        type="text"
+        id="lenguaje"
+        name="lenguaje"
+        list="lenguajes"
+    >
+
+    <datalist id="lenguajes">
+
+        <option value="HTML">
+        <option value="CSS">
+        <option value="JavaScript">
+        <option value="Python">
+
+    </datalist>
+
+    EXPLICACIÓN:
+
+    datalist ofrece sugerencias para un input.
+
+    No es exactamente lo mismo que select.
+
+    En un select normal elegimos entre
+    las opciones disponibles.
+
+    Con datalist, generalmente podemos escribir
+    también valores que no estén en la lista.
+
+    PRUEBAS:
+
+    A. Escribe las primeras letras de JavaScript.
+
+    B. Observa las sugerencias.
+
+    C. Escribe un lenguaje que no aparezca.
+
+    D. Añade más opciones.
+
+
+    ============================================================
+    9. AGRUPAR OPCIONES: <optgroup>
+    ============================================================
+
+    <label for="comida">Comida favorita:</label>
+
+    <select id="comida" name="comida">
+
+        <optgroup label="Frutas">
+            <option value="manzana">Manzana</option>
+            <option value="pera">Pera</option>
+        </optgroup>
+
+        <optgroup label="Verduras">
+            <option value="pepino">Pepino</option>
+            <option value="zanahoria">Zanahoria</option>
+        </optgroup>
+
+    </select>
+
+    EXPLICACIÓN:
+
+    optgroup permite organizar las opciones
+    de un select en grupos.
+
+    PRUEBA:
+
+    Añade un tercer grupo llamado "Bebidas".
+
+
+    ============================================================
+    10. ATRIBUTOS ADICIONALES DE LOS FORMULARIOS
+    ============================================================
+
+    ------------------------------------------------------------
+    A. readonly
+    ------------------------------------------------------------
+
+    <input type="text" value="No editable" readonly>
+
+    Impide que el usuario modifique normalmente
+    el contenido del campo.
+
+    El valor puede enviarse con el formulario
+    si el campo tiene name.
+
+    ------------------------------------------------------------
+    B. disabled
+    ------------------------------------------------------------
+
+    <input type="text" value="Desactivado" disabled>
+
+    Desactiva el control.
+
+    El usuario no puede interactuar con él
+    de la forma habitual.
+
+    Su valor no se envía con el formulario.
+
+    ------------------------------------------------------------
+    C. autofocus
+    ------------------------------------------------------------
+
+    <input type="text" autofocus>
+
+    Solicita que el campo reciba el foco
+    automáticamente al cargar la página.
+
+    Conviene utilizarlo con moderación.
+
+    ------------------------------------------------------------
+    D. autocomplete
+    ------------------------------------------------------------
+
+    <input type="text" autocomplete="name">
+
+    Permite indicar qué tipo de información
+    puede autocompletar el navegador.
+
+    Otros ejemplos:
+
+        autocomplete="email"
+        autocomplete="tel"
+        autocomplete="given-name"
+        autocomplete="family-name"
+
+    El navegador decide si ofrece sugerencias.
+
+    ------------------------------------------------------------
+    E. pattern
+    ------------------------------------------------------------
+
+    <input
+        type="text"
+        pattern="[A-Z]{3}"
+        title="Introduce tres letras mayúsculas"
+    >
+
+    pattern permite definir una expresión regular
+    que debe cumplir el valor del campo.
+
+    En este ejemplo se piden exactamente
+    tres letras mayúsculas de la A a la Z.
+
+    PRUEBAS:
+
+        ABC  -> válido
+        abc  -> no válido
+        AB   -> no válido
+        ABCD -> no válido
+
+    ------------------------------------------------------------
+    F. size
+    ------------------------------------------------------------
+
+    <input type="text" size="30">
+
+    Indica una anchura visual aproximada
+    expresada en caracteres.
+
+    No limita cuántos caracteres se pueden escribir.
+
+    Para limitar la longitud utilizamos maxlength.
+
+    ------------------------------------------------------------
+    G. novalidate
+    ------------------------------------------------------------
+
+    <form novalidate>
+
+    El atributo novalidate, colocado en form,
+    desactiva la validación interactiva
+    automática del formulario al enviarlo.
+
+    No elimina los atributos de los controles.
+
+    PRUEBA:
+
+    Añade novalidate a la etiqueta form principal.
+
+    Intenta enviar campos obligatorios vacíos.
+
+    Después elimina novalidate y repite la prueba.
+
+        -->
+
 
 
 </body>
