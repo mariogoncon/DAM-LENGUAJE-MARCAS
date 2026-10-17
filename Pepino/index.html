@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pepinos Albinos</title>
 </head>
+
 <body>
     <h1>Pepinos Manolo</h1>
     <h2>Los mejores pepinos del mercado</h2>
-    <a href="https://www.pccomponentes.com/" target="_blank" >Somos el verdadero monopolio</a>
+    <a href="https://www.pccomponentes.com/" target="_blank">Somos el verdadero monopolio</a>
 
-    <img src="pepino.png" title="pepino" alt="Logotipo de un pepino sabrosón" width="200" height="200" >
+    <img src="pepino.png" title="pepino" alt="Logotipo de un pepino sabrosón" width="200" height="200">
 
-    
+
     <h2>Tipos de pepinos</h2>
 
-    <ul> 
+    <ul>
         <li>Pepino azul</li>
         <li>Pepino rojo</li>
         <li>Pepino holandés</li>
@@ -40,13 +42,13 @@
     <table border="1">
         <caption>Lista de pedidos</caption>
         <thead>
-        <tr>
-            <th>Nº PEDIDO</th>
-            <th>FECHA</th>
-            <th>IMPORTE</th>
-            <th>VER</th>
-            <th colspan="2">ACCIÓN</th>
-        </tr>
+            <tr>
+                <th>Nº PEDIDO</th>
+                <th>FECHA</th>
+                <th>IMPORTE</th>
+                <th>VER</th>
+                <th colspan="2">ACCIÓN</th>
+            </tr>
         </thead>
         <tbody>
 
@@ -84,27 +86,213 @@
     <br>
     <br>
     <br>
-    
+
 
     <form>
-        <label>Nombre: 
-            <input id="name" type="text" placeholder="Escribe tu nombre" required>
-        </label>
+
+        <fieldset>
+
+            <legend>Datos básicos</legend>
+
+
+            <label>Nombre:
+                <input id="name" type="text" placeholder="Escribe tu nombre" required>
+            </label>
+
+            <br>
+            <br>
+
+            <label> Edad:
+                <input type="number" min="18" max="99" placeholder="Escribe tu edad" required>
+            </label>
+
+            <br>
+            <br>
+
+            <label> Fecha de nacimiento:
+                <input type="date" placeholder="Escribe tu fecha de nacimiento" required>
+            </label>
+
+            <br>
+            <br>
+
+            <label> Email:
+                <input type="email" placeholder="Escribe tu email" required>
+            </label>
+
+            <br>
+            <br>
+
+            <label> Teléfono:
+                <input type="tel" placeholder="Escribe tu número de teléfono" required>
+            </label>
+
+            <br>
+            <br>
+
+            <label> Contraseña:
+                <input type="password" placeholder="Escribe tu contraseña" minlength="8" required>
+            </label>
+
+        </fieldset>
 
         <br>
         <br>
+
+        <fieldset>
+            <legend>Fecha, hora y número</legend>
+
+            <label>Hora:
+
+                <input type="time" step="300">
+            </label>
+
+            <br>
+            <br>
+
+            <label>Hora cita:
+
+                <input type="datetime-local" step="300">
+            </label>
+
+            <br>
+            <br>
+
+            <label>Mes cita:
+
+                <input type="month">
+
+            </label>
+
+            <br>
+            <br>
+
+            <label>Semana:
+
+                <input type="week">
+
+            </label>
+
+
+        </fieldset>
+
         <br>
+        <br>
+
+        <fieldset>
+            <label>Color:
+                <input type="color" value="#00CCFF">
+
+            </label>
+        </fieldset>
+
+        <br>
+        <br>
+
+        <fieldset>
+
+            <legend>Opciones y listas</legend>
+
+            <fieldset>
+
+                <legend>Tipo de pepino</legend>
+
+                <input type="radio" name="tipo_pepino" value="moreno">
+                <label>Moreno</label>
+                <br>
+                <input type="radio" name="tipo_pepino" value="albino">
+                <label>Albino</label>
+                <br>
+                <input type="radio" name="tipo_pepino" value="kirby">
+                <label>Kirby</label>
+
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+
+                <legend>Extras</legend>
+
+                <input type="checkbox" name="extras" value="ketchup">
+                <label>Ketchup</label>
+                <br>
+                <input type="checkbox" name="extras" value="mostaza">
+                <label>Mostaza</label>
+                <br>
+                <input type="checkbox" name="extras" value="calamares">
+                <label>Calamares</label>
+                <br>
+                <input type="checkbox" name="extras" value="ensaladilla">
+                <label>Ensaladilla</label>
+
+            </fieldset>
+
+
+
+        </fieldset>
+
+        <br>
+
+        <label>Variedad</label>
+        <select>
+            <option>--- Escoge una opción ---</option>
+
+            <optgroup label="clasicos">
+            <option>Holandés</option>
+            <option>Español</option>
+            </optgroup>
+
+            <optgroup label="modernos">
+            <option>Pelao</option>
+            <option>Avinagrao</option>
+            </optgroup>
+            
+        </select>
+
+        <br>
+        <br>
+
+        <label>Lotes:</label>
+        <select name="lotes[]" multiple size="5">
+            <option>Lote 1</option>
+            <option>Lote 2</option>
+            <option>Lote 3</option>
+            <option>Lote 4</option>
+            <option>Lote 5</option>
+            <option>Lote 6</option>
+            <option>Lote 7</option>
+        </select>
+
+        <br>
+        <br>
+
+        <label>Observaciones: </label>
+        <textarea rows="10" cols="40"></textarea>
+
+        <br>
+        <br>
+
+        <label>Adjuntar archivos: </label>
+        <input type="file" accept=".pdf, .jpg" multiple>
         
-        <button type="submit">Enviar</button>
+        <br>
+        <progress value="80" max="100"></progress>
+        <br>
+        <progress></progress>
+        <br>
 
+        <button type="submit">
+            Enviar
+        </button>
 
-
-
+        <button type="reset">
+            Restablecer formulario
+        </button>
 
     </form>
 
 
-
-    
 </body>
+
 </html>
